@@ -24,6 +24,20 @@ public class Principal {
         System.out.println("Digite se o tênis está disponível");
         boolean disponivel = leitor.nextBoolean();
 
+        //Ler as informações da marca
+        System.out.printf("Digite o nome da marca");
+        String nomeMarca = leitor.next() + leitor.nextLine();
+
+        System.out.printf("Insira o nome do arquivo da logo");
+        String logo = leitor.next() + leitor.nextLine();
+
+        //Criar o objeto marca
+        Marca marca = new Marca();
+
+        //Atribuir os valores ao objeto
+        marca.nome = nomeMarca;
+        marca.logo = logo;
+
         //Criando o objeto tênis
 
         Tenis tenis = new Tenis();
@@ -34,6 +48,8 @@ public class Principal {
         tenis.disponivel = disponivel;
         tenis.tamanho = tamanho;
         tenis.preco = preco;
+        tenis.marca = marca;
+
 
         //Exibir os valores que estão dentro do objeto
 
@@ -43,7 +59,22 @@ public class Principal {
         System.out.println("Disponível: " + tenis.disponivel);
         System.out.println("Preço: " + tenis.preco);
 
+        //Exibir os dados da marca (atáves do objeto tenis)
+        System.out.printf("Marca: " + tenis.marca.nome);
+        System.out.printf("Logo: " + tenis.marca.logo);
+
+        //Chamar (invocar) o método para aumentar o valor do tenis em 15
+        tenis.aumentarPreço(10);
+
+        //Exibir o valor atualizado do tenis
+        System.out.printf("Valor atualizado: " + tenis.preco);
+
+        //Chamar o método para calcular o preço com desconto
+        double valorDoTenisComDesconto = tenis.aplicarDesconto(50);
+        System.out.printf("Tênis  com desconto: " + valorDoTenisComDesconto);
+        }
+
     }
 
 
-}
+

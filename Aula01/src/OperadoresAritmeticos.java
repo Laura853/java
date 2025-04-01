@@ -16,7 +16,7 @@ public class OperadoresAritmeticos {
 
         //Exibir a media do Semestre
 
-        System.out.println("A média é " + media);
+         System.out.println("A média é " + media);
 
         int x = 10;
         x++; //incremento em 1 unidade (x = x + 1)
